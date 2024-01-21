@@ -1,18 +1,25 @@
 <h1 class="my-3">All restaurants</h1>
 
 <% @restaurants.each do |restaurant| %>
-  <div class="d-flex flex-column bd-highlight mb-3">
-    <div>
-      <%= restaurant.name %>
+  <div class="w-50 d-flex flex-column border p-3 rounded mb-3">
+    <div class="restaurant d-flex justify-content-between">
+      <div class="name-category">
+        <div>
+          <%= restaurant.name %>
+        </div>
+        <div>
+          <%= restaurant.category %>
+      </div>
+      </div>
+      <div class="address-phone">
+        <div>
+          🏠 <%= restaurant.address %>
+        </div>
+        <div>
+          📞 <%= restaurant.phone_number %>
+        </div>
+      </div>
     </div>
-    <div>
-      <%= restaurant.address %>
-    </div>
-    <div>
-      <%= restaurant.phone_number %>
-    </div>
-    <div>
-      <%= restaurant.category %>
-    </div>
+
   </div>
 <% end %>

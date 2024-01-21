@@ -7,6 +7,7 @@ puts 'Creating Restaurants'
 5.times do |index|
   Restaurant.create(name: Faker::Restaurant.name,
                     address: Faker::Address.street_address,
+                    phone_number: Faker::PhoneNumber.phone_number,
                     category: (0..4).to_a.sample)
   puts "#{index + 1} restaurant created"
 end

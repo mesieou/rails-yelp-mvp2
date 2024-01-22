@@ -1,5 +1,5 @@
 class Restaurant < ApplicationRecord
   has_many :reviews, dependent: :destroy
-  enum :category, { chinese: 0, italian: 1, japanese: 2, french: 3, belgian: 4 }
+  enum :category, ["chinese", "italian", "japanese", "french", "belgian"]
   validates :name, :address, :category, presence: true
 end

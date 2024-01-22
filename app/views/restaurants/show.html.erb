@@ -1,0 +1,33 @@
+<div class="row my-5">
+  <div class="col-lg-8 col-sm-12">
+    <h1> <%= @restaurant.name %></h1>
+    <div id="carouselExample" class="carousel slide my-4" data-controller="hello">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+         <%= image_tag 'Restaurant 2.jpeg', alt: '', class:"d-block w-100 h-50" %>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag 'Restaurant_Nasinneula.jpg', alt: '', class:"d-block w-100 h-75" %>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag '794a4fda36a64b7fafd20fbcb5971633.webp', alt: '', class:"d-block w-100 h-75" %>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <p class="m-0"> <strong>Address: </strong> <%= @restaurant.address %></p>
+    <p> <strong>Phone: </strong> <%= @restaurant.phone_number %></p>
+
+  </div>
+  <div class="col-lg-4 col-sm-12">
+    <h2>Reviews</h2>
+  </div>
+</div>

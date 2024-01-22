@@ -5,7 +5,7 @@
     <div class="restaurant d-flex justify-content-between">
       <div class="name-category">
         <div>
-          <%= restaurant.name %>
+          <%= link_to restaurant.name, restaurant_path(restaurant), class: "text-decoration-none" %>
         </div>
         <div>
           <%= restaurant.category %>

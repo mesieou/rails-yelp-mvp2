@@ -29,6 +29,14 @@
   </div>
   <div class="col-lg-4 col-sm-12">
     <h2>Reviews</h2>
+
+    <% @restaurant.reviews.each do |review| %>
+      <p>Rating: <%= review.rating / 5 %></p>
+      <p> <%= review.content %></p>
+    <% end %>
+
+    <%= link_to "Add new review", new_restaurant_review_path(@restaurant)  %>
+
   </div>
 <span class="border-bottom mb-2"></span>
 <%= link_to '🏡 Go back Home', restaurants_path, class: "text-decoration-none" %>

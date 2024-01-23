@@ -1,5 +1,5 @@
-<h1 class="my-3">All restaurants</h1>
-<div class="border-bottom">
+<h1 class="my-5">All restaurants</h1>
+<div class="border-bottom p-3 my-2">
   <% @restaurants.each do |restaurant| %>
     <div class="w-50 d-flex flex-column border p-3 rounded mb-3">
       <div class="restaurant d-flex justify-content-between">
@@ -23,4 +23,4 @@
     </div>
   <% end %>
 </div>
-<%= link_to 'Add a new restaurant', new_restaurant_path, class: 'text-decoration-none' %>
+<%= link_to '➕ New Restaurant', new_restaurant_path, class: 'text-decoration-none' %>

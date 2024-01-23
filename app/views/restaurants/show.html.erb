@@ -4,13 +4,13 @@
     <div id="carouselExample" class="carousel slide my-4" data-controller="hello">
       <div class="carousel-inner">
         <div class="carousel-item active">
-         <%= image_tag 'Restaurant 2.jpeg', alt: '', class:"d-block w-100 h-50" %>
+         <%= image_tag 'Restaurant 2.jpeg', alt: '', class:"d-block w-100 h-50 rounded" %>
         </div>
         <div class="carousel-item">
-          <%= image_tag 'Restaurant_Nasinneula.jpg', alt: '', class:"d-block w-100 h-75" %>
+          <%= image_tag 'Restaurant_Nasinneula.jpg', alt: '', class:"d-block w-100 h-75 rounded" %>
         </div>
         <div class="carousel-item">
-          <%= image_tag '794a4fda36a64b7fafd20fbcb5971633.webp', alt: '', class:"d-block w-100 h-75" %>
+          <%= image_tag '794a4fda36a64b7fafd20fbcb5971633.webp', alt: '', class:"d-block w-100 h-75 rounded" %>
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -22,21 +22,20 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-
-    <p class="m-0"> <strong>Address: </strong> <%= @restaurant.address %></p>
-    <p> <strong>Phone: </strong> <%= @restaurant.phone_number %></p>
-
+    <div class="address-phone">
+      <p class="m-0"> <strong>Address: </strong> <%= @restaurant.address %></p>
+      <p> <strong>Phone: </strong> <%= @restaurant.phone_number %></p>
+    </div>
   </div>
   <div class="col-lg-4 col-sm-12">
-    <h2>Reviews</h2>
-
-    <% @restaurant.reviews.each do |review| %>
-      <p>Rating: <%= review.rating / 5 %></p>
-      <p> <%= review.content %></p>
-    <% end %>
-
-    <%= link_to "Add new review", new_restaurant_review_path(@restaurant)  %>
-
+    <h2 class="my-3">Reviews</h2>
+    <div class="border-bottom my-2">
+      <% @restaurant.reviews.each do |review| %>
+        <p class="mb-0"><%= '⭐️' * review.rating%></p>
+        <p><i><%= review.content %></i></p>
+      <% end %>
+    </div>
+    <%= link_to "➕ New Review", new_restaurant_review_path(@restaurant), class: "text-decoration-none"  %>
   </div>
 <span class="border-bottom mb-2"></span>
 <%= link_to '🏡 Go back Home', restaurants_path, class: "text-decoration-none" %>

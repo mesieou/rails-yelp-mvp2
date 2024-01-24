@@ -1,0 +1,9 @@
+
+<div class="border bg-light p-3">
+  <p> <strong>➕ Add a review</strong> </p>
+  <%= simple_form_for [restaurant, review] do |f| %>
+    <%= f.input :rating, collection: [1, 2, 3, 4, 5] %>
+    <%= f.input :content %>
+    <%= f.submit %>
+  <% end %>
+</div>
